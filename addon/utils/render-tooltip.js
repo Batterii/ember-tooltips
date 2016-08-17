@@ -65,11 +65,14 @@ export default function renderTooltip(domElement, options, context) {
         }
 
         tooltip._delayTimer = run.later(function() {
+          // It's possible the parent Ember component has been destroyed before this timer fires
+          if (!context || context.isDestroying || context.isDestroyed) {
+            return;
+          }
+
           tooltip.show();
           $tooltip.attr('aria-hidden', true);
-          if (context) {
-            context.set('tooltipVisibility', true);
-          }
+          context.set('tooltipVisibility', true);
           $domElement.attr('aria-describedby', tooltipId);
           if (duration) {
             /* Hide tooltip after specified duration */
