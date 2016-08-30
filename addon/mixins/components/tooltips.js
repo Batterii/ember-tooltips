@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import renderTooltip from 'ember-tooltips/utils/render-tooltip';
+import isHTMLSafe from 'ember-tooltips/utils/is-html-safe';
 
 const { on, run } = Ember;
 const { Tooltip } = window;
@@ -202,7 +203,7 @@ export default Ember.Mixin.create({
 
     if (tooltip) {
       let tooltipContent = this.get('tooltipContent');
-      if (tooltipContent instanceof Ember.Handlebars.SafeString) {
+      if (isHTMLSafe(tooltipContent)) {
         // Convert SafeString to regular string
         tooltipContent = tooltipContent.toString();
       }

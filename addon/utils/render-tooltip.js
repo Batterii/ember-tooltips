@@ -1,8 +1,9 @@
 
 import Ember from 'ember';
+import isHTMLSafe from 'ember-tooltips/utils/is-html-safe';
 
 const { Tooltip } = window;
-const { $, run, Handlebars: { SafeString } } = Ember;
+const { $, run } = Ember;
 
 let tooltipIndex = 1;
 
@@ -168,7 +169,7 @@ export default function renderTooltip(domElement, options, context) {
 
     /* Make sure content can be passed as a SafeString */
 
-    if (content instanceof SafeString) {
+    if (isHTMLSafe(content)) {
       newOptions.content = content.toString();
     }
 

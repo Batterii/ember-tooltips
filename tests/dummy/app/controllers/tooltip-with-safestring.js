@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
     },
   },
 
-  safeString: new Ember.Handlebars.SafeString('this is a test'),
+  safeString: Ember.String.htmlSafe('this is a test'),
 
   toggle: true,
 
@@ -21,9 +21,9 @@ export default Ember.Controller.extend({
     let safeString;
 
     if (toggle) {
-      safeString = new Ember.Handlebars.SafeString('SafeString 1');
+      safeString = Ember.String.htmlSafe('SafeString 1');
     } else {
-      safeString = new Ember.Handlebars.SafeString('SafeString 2');
+      safeString = Ember.String.htmlSafe('SafeString 2');
     }
 
     return safeString;
