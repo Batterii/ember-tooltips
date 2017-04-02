@@ -1,6 +1,6 @@
 {
   "name": "ember-tooltips",
-  "version": "0.6.0",
+  "version": "2.1.2",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",
@@ -11,9 +11,9 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "https://github.com/sir-dunxalot/ember-tooltips",
+  "repository": "https://github.com/batterii/ember-tooltips",
   "engines": {
-    "node": "4.4.x"
+    "node": ">= 4"
   },
   "author": "",
   "license": "MIT",
