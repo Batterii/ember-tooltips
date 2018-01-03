@@ -37,7 +37,7 @@ export default function renderTooltip(domElement, options, context) {
     /* We debounce to avoid focus causing issues
     when showOn and hideOn are the same event */
 
-    run.debounce(function() {
+    run.debounce(null, function() {
 
       run.cancel(tooltip._delayTimer);
 
